@@ -1,0 +1,62 @@
+
+<div class="col-md-8" style="margin-top:5px;">
+    <h4>CUSTOMER DETAILS</h4>
+<button class="btn btn-success btn-circle pull-right" 
+    (click)="add()"     
+    title="Add Customer">
+<i class="glyphicon glyphicon-plus"></i>
+</button>
+
+
+<div class="alert-danger">{{errorMessage}}</div>
+
+<div class="input-group">
+<input type="text" class="form-control" 
+      placeholder="Search" 
+      aria-describedby="basic-addon1">
+<span class="input-group-addon" id="basic-addon1">Search</span>
+</div> 
+<table class="table table-bordered table-hover">
+<thead>
+  <tr class="alert alert-warning">
+      <th>ID</th>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Phone</th>
+      <th>Action</th>
+  </tr>
+</thead>
+<tbody>
+  <tr *ngFor="let cust of customers">
+      <td>{{cust.id}}</td>
+      <td>{{cust.name}}</td>
+      <td>{{cust.address}}</td>
+      <td>{{cust.phone}}</td>
+      <td style="width: 70px;">
+          <i class="glyphicon glyphicon-edit pointer"
+             (click)="edit(cust.id)" title="Edit"></i>
+          <i class="glyphicon glyphicon-trash pointer"    
+              (click)="delete(cust.id)" title="Delete"></i>
+          <i class="glyphicon glyphicon-user pointer" 
+              (click)="image(cust.id)" title="Image"></i>
+      </td>
+  </tr>
+</tbody>
+</table>
+<div id="panel-group">
+    <div class="panel panel-default" *ngFor="let item of items;let i=index;">
+           <div class="panel-heading" (click)="current=i">
+          <h5 class="panel-title">
+              <i class='glyphicon' 
+              [class.glyphicon-chevron-right] = "i != current"
+              [class.glyphicon-chevron-down] = "i == current" ></i>{{item.title}}
+          </h5>
+           </div>
+           <div id="collapse1" class="panel-collapse" [class.collapse]='current != i'>
+              <div class="panel-body">{{item.description}}</div>
+            </div>
+    </div>
+  
+  </div>
+</div>
+

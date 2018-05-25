@@ -1,0 +1,32 @@
+[
+      {  
+	     "id":"1",
+         "name":"Albert Einstein",
+         "address":"Queens Long Island",
+		 "phone":"8880573487"
+      },
+	  {  
+	     "id":"2",
+        "name":"Albert Einstein2",
+         "address":"Queens Long Island2",
+		 "phone":"8880573487"
+      },
+	  {  
+	     "id":"3",
+        "name":"Albert Einstein3",
+         "address":"Queens Long Island3",
+		 "phone":"8880573487"
+      },
+	  {  
+	     "id":"4",
+         "name":"Albert Einstein4",
+         "address":"Queens Long Island4",
+		 "phone":"8880573487"
+      },{  
+	     "id":"5",
+          "name":"Albert Einstein5",
+         "address":"Queens Long Island5",
+		 "phone":"8880573487"
+      }
+   
+]

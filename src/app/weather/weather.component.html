@@ -1,0 +1,39 @@
+<h2>Pagination Example </h2>
+<div class="col-md-12">
+ <div class="form-group">
+ <table class="table table-hover">
+   <tr class="alert alert-warning">
+     <th>TESTID</th>
+     <th>DEVICE ID</th>
+      <th>TEST NAME</th>
+      <th>DEVICE NAME</th>
+       <th>RESULT</th>
+        <th>TIMESTAMP</th>
+        <th>HOSTNAME</th>
+        <th>STATISTICS</th>
+   </tr>
+   <tr *ngFor="let item of ListReports |paginate: {itemsPerPage: 4, currentPage:page, id: '1'}">
+     <td>{{item.testid}}</td>
+     <td>{{item.deviceid}}</td>
+     <td>{{item.testName}}</td>
+     <td>{{item.deviceName}}</td>  
+     <td>{{item.result}}</td>      
+     <td>{{item.timeStamp}}</td> 
+     <td>{{item.execuationDetails.output.hostname}}</td> 
+     <td>{{item.execuationDetails.output.statistics}}</td>    
+     
+   </tr>
+ </table>
+ <pagination-controls (pageChange)="page = $event" id="1"
+                      maxSize="5"
+                      directionLinks="true"
+                      autoHide="true">
+                </pagination-controls>`
+ </div>
+
+</div>
+<div class="col-md-4 form-group"><span [appShadow]="'hotpink'" [appShadowX]="'12px'" [appShadowY]="'6px'"
+  [appShadowblur]="'30px'">Custom Directive</span>
+<hr>
+  <button class="form-control" type="button" (click)="visitRangle()" [appConfirm]="visitRangle">Visit Rangle</button>
+ </div>

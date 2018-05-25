@@ -1,0 +1,43 @@
+<title>{{title}}</title>
+<h2>Search Details</h2>
+<div class="col-md-8" style="margin-top:5px;">
+    <simple-notifications options="options"></simple-notifications>
+  <div class="form-group">
+    <div style="margin-bottom:15px;" class="row">
+      <div class="col-md-4 ">
+          <label class="form-control">Please select a movie</label>
+      </div>
+      <div class="col-md-4">
+        <select class="form-control" (change)="onMovieSelection($event)">
+            <option *ngFor="let item of MovieList" [value]=item.movie_Title>{{item.movie_Title}}</option>
+          </select>
+      </div>
+    </div>
+    <div style="margin-bottom:15px;" class="row">
+    <div class="col-md-4">
+        <label class="form-control">You selected Movie</label>
+    </div>
+    <div class="col-md-4">
+<input type="text" [(ngModel)]="selectedMovie" class="form-control" [disabled]="disable">
+    </div>
+    </div>
+
+<div class="col-md-8">
+  <h3>Movie Details</h3>
+  <br>
+  <p class="well lead alert alert-success">
+      <i> Title :</i> {{ this.movie_Title }} <br>
+      <i> Plot :</i> {{ this.movie_Plot }} <br>
+      <i> Actors :</i> {{ this.movie_Actors }} <br>
+      <i> Directed by :</i> {{ this.movie_Director }} <br>
+      <i> Rated :</i> {{ this.movie_Rated }} <br>
+      <i> Release Date :</i> {{ this.movie_Released }} <br>
+  </p>
+  <p class="text-info">Total # of all the service requests including Weather, Movie, and Currency is :
+      <span class="badge">{{this._sharedService.totReqsMade}}</span>
+  </p>
+</div>
+
+</div>
+
+</div>

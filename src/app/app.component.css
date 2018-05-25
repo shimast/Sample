@@ -1,0 +1,30 @@
+.header{  
+    margin-top:15px;
+    width:1145px;
+    height:45px;
+    margin-bottom:25px;
+    font-family:Trebuchet MS, Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    background: linear-gradient(to top, #f8f8f8 0%, #8F8484 83%);
+    padding-top:5px;
+    padding-left:10px;
+
+}
+.footer{  
+    margin-top:10px;
+    width:1145px;
+    height:30px;
+    margin-bottom:5px;
+    font-family:Trebuchet MS, Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    background: linear-gradient(to top, #f8f8f8 0%, #8F8484 83%);
+    padding-top:15px;
+
+}
+input[type='text'].ng-invalid{
+    border-left: 4px solid #900;
+}
+
+input[type='text'].ng-valid{
+    border-left: 4px solid #090;
+}

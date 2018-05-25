@@ -1,0 +1,56 @@
+<h3>{{title}} Customer</h3>
+<hr>
+<form [formGroup]="editUserForm" (ngSubmit)="saveUser()" novalidate>
+        <div class="col-md-6">
+                <div class="alert alert-danger" *ngIf="!editUserForm.controls['name'].valid && (editUserForm.controls['name'].dirty || submitted)">
+                    <div *ngIf="editUserForm.controls['name'].hasError('required')">
+                        Name is required
+                    </div>
+                    <div *ngIf="editUserForm.controls['name'].hasError('minlength')">
+                       Min. 3 charaters
+                    </div>
+                    <div *ngIf="editUserForm.controls['name'].hasError('maxlength')">
+                        Must not exceed 30 charaters
+                    </div>
+                </div>
+                <div class="alert alert-danger" *ngIf="!editUserForm.controls['address'].valid && (editUserForm.controls['address'].dirty || submitted)">
+                        <div *ngIf="editUserForm.controls['address'].hasError('required')">
+                            Address is required
+                        </div>              
+                    </div>
+                    <div class="alert alert-danger" 
+                    *ngIf="editUserForm.controls['phone'].invalid && (editUserForm.controls['phone'].dirty || submitted)">
+                   <div *ngIf="editUserForm.controls['phone'].errors.pattern">
+                       Invalid phone number!
+                   </div>
+               </div>  
+            </div>
+    <div class="form-group row">
+        <label for="" class="col-md-12">Name</label>
+        <div class="col-md-4">
+            <input type="text" class="form-control" formControlName="name">
+        </div>
+        <div class="col-md-6"></div>
+    </div>
+    <div class="form-group row">
+            <label for="" class="col-md-12">Address</label>
+            <div class="col-md-4">
+                <input type="text" class="form-control" formControlName="address">
+            </div>
+            <div class="col-md-6"></div>
+        </div>
+        <div class="form-group row">
+                <label for="" class="col-md-12">Phone</label>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" formControlName="phone">
+                </div>
+                <div class="col-md-6"></div>
+            </div>
+            <div class="form-group row">
+                   <div class="col-md-12">
+                       <input type="submit" class="btn btn-primary" [disabled]="editUserForm.invalid" value="Save">
+                       <input type="button" class="btn btn-warning" value="Cancel" (click)="cancel()">
+                   </div>
+                </div>
+
+</form>
